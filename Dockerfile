@@ -1,5 +1,9 @@
-
+#base image : "from" imagename
 FROM openjdk:8
-COPY ./target/DevopsCalculator-1.0-SNAPSHOT-jar-with-dependencies.jar ./
+#copying the jarfile in docker container/image
+# COPY <SRC> <DEST>
+COPY ./target/Calculator-1.0-SNAPSHOT-jar-with-dependencies.jar ./
+#changing the working directiory
 WORKDIR ./
-CMD ["java", "-jar", "DevopsCalculator-1.0-SNAPSHOT-jar-with-dependencies.jar"]
+#command to run jar file
+CMD ["java", "-jar", "Calculator-1.0-SNAPSHOT-jar-with-dependencies.jar"]
